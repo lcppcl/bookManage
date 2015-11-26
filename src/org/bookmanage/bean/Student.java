@@ -1,0 +1,59 @@
+package org.bookmanage.bean;
+
+import java.util.Date;
+
+/*
+ * 学生模型
+ */
+public class Student {
+	private String readerId;//借书证号
+	private String name;//学生姓名
+	private String spec;//专业
+	private boolean sex;//性别
+	private Date born;//出生年月
+	private int num;//借书量
+	private int snum;//照片
+	public String getReaderId() {
+		return readerId;
+	}
+	public void setReaderId(String readerId) {
+		this.readerId = readerId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSpec() {
+		return spec;
+	}
+	public void setSpec(String spec) {
+		this.spec = spec;
+	}
+	public boolean isSex() {
+		return sex;
+	}
+	public void setSex(boolean sex) {
+		this.sex = sex;
+	}
+	public Date getBorn() {
+		return born;
+	}
+	public void setBorn(Date born) {
+		this.born = born;
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public int getSnum() {
+		return snum;
+	}
+	public void setSnum(int snum) {
+		this.snum = snum;
+	}
+	
+}
