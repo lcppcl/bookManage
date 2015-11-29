@@ -1,0 +1,124 @@
+.search {
+	position: absolute;
+	width: 900px;
+	min-height: 550px;
+	height: auto;
+	border: 5px solid #CCCC99;
+	left: 80px;
+	top: 40px;
+}
+
+.form-group {
+	position: relative;
+	left: 260px;
+	top: 50px;
+}
+
+.form-group span {
+	font-size: 16px;
+	margin-right: 10px;
+}
+
+.find-text {
+	width: 300px;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 2px solid #CCCC66;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+
+.find-btn {
+	position: absolute;
+	width: 80px;
+	height: 34px;
+	background-color: #CCCC66;
+	color: white;
+}
+
+.result {
+	position: relative;
+	top: 100px;
+	left: 140px;
+	width: 600px;
+	min-height: 300px;
+	height: auto;
+	border: 3px solid #EEE5DE;
+	margin-bottom: 150px;
+	display: none;
+}
+
+.shows {
+	position: absolute;
+	top: 160px;
+	left: 140px;
+	width: 600px;
+	height: 300px;
+	border: 3px solid #EEE5DE;
+	margin-bottom: 150px;
+	overflow: auto;
+	overflow-y: hidden;
+}
+
+.shows-head {
+	position: relative;
+	font-size: 16px;
+	left: 400px;
+	top: 90px;
+	color: chocolate;
+}
+
+.shows-list {
+	position: relative;
+	width: 90%;
+	left: 5%;
+	top: 20px;
+	color: dimgray;
+}
+
+.shows-list td {
+	width: 10%;
+	height: 50px;
+	border-bottom: 1px solid gainsboro;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.list-table {
+	position: relative;
+	width: 90%;
+	left: 5%;
+}
+
+.list-table th {
+	height: 50px;
+	width: 20%;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-align: center;
+	border-bottom: 2px solid darkgray;
+}
+
+.list-table td {
+	height: 45px;
+	width: 20%;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-align: center;
+	border-bottom: 1px solid lightgray;
+}
+
+.pagination {
+	position: relative;
+	top: 10px;
+	left: 45%;
+}
