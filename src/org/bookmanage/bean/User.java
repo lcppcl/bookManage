@@ -5,14 +5,14 @@ import java.util.Date;
 /*
  * 学生模型
  */
-public class Student {
-	private String readerId;//借书证号
+public class User {
+	private String readerId;//读者证号
 	private String name;//学生姓名
 	private String spec;//专业
-	private boolean sex;//性别
-	private Date born;//出生年月
+	private int sex;//性别
 	private int num;//借书量
-	private int snum;//照片
+	private int type;//用户类型 0是学生1是管理员
+	private String passwd;//账户密码
 	public String getReaderId() {
 		return readerId;
 	}
@@ -31,17 +31,11 @@ public class Student {
 	public void setSpec(String spec) {
 		this.spec = spec;
 	}
-	public boolean isSex() {
+	public int getSex() {
 		return sex;
 	}
-	public void setSex(boolean sex) {
+	public void setSex(int sex) {
 		this.sex = sex;
-	}
-	public Date getBorn() {
-		return born;
-	}
-	public void setBorn(Date born) {
-		this.born = born;
 	}
 	public int getNum() {
 		return num;
@@ -49,11 +43,17 @@ public class Student {
 	public void setNum(int num) {
 		this.num = num;
 	}
-	public int getSnum() {
-		return snum;
+	public int getType() {
+		return type;
 	}
-	public void setSnum(int snum) {
-		this.snum = snum;
+	public void setType(int type) {
+		this.type = type;
 	}
-	
+	public String getPasswd() {
+		return passwd;
+	}
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
+	}
+
 }

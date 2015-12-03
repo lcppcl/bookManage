@@ -5,5 +5,32 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-        
+    <package name="default" extends="struts-default">
+        <action name="login" class="org.bookmanage.action.LoginAction" method="login">
+            <result name="student">/S_index.jsp</result>
+            <result name="admin">/M_index.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="book" class="org.bookmanage.action.BookAction" method="queryByBookIsbn">
+            <result name="book">/M_find_page.jsp</result>
+            <result name="info">/S_index.jsp</result>
+        </action>
+        <action name="bookList" class="org.bookmanage.action.BookAction" method="queryAll">
+            <result name="bookList">/M_find.jsp</result>
+            <result name="info">/S_index.jsp</result>
+        </action>
+
+
+
+
+        <action name="lendList" class="org.bookmanage.action.LendAction" method="queryLend">
+            <result name="lendList">/S_book.jsp</result>
+            <result name="info">/S_book.jsp</result>
+        </action>
+        <action name="returnBook" class="org.bookmanage.action.LendAction" method="returnBook">
+            <result name="returnBook" type="chain">lendList</result>
+        </action>
+
+    </package>
 </struts>
