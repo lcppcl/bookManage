@@ -25,7 +25,7 @@ public class LendAction extends ActionSupport {
         }
     }
 
-    //è¿˜ä¹¦
+    //»¹Êé
     public String returnBook() throws Exception {
         LendDao lendDao  = new LendDao();
         String isbn = request.getParameter("isbn");

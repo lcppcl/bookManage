@@ -11,6 +11,7 @@ import java.util.List;
 
 public class BookDao {
     private static DbUtil dbUtil = new DbUtil();
+    //根据图书证号进行查询
     public Book queryByBookIsbn(String isbn) throws Exception{
         Connection con = dbUtil.getCon();
         String sql = "select * from book where isbn=?";
@@ -25,16 +26,15 @@ public class BookDao {
             book.setAuthor(rs.getString(3));
             book.setPublish(rs.getString(4));
             book.setPrice(rs.getFloat(5));
-            book.setSunm(rs.getInt(6));
-            book.setSummary(rs.getString(7));
-            book.setPhoto(rs.getString(8));
+            book.setSummary(rs.getString(6));
+            book.setPhoto(rs.getString(7));
             return book;
         } else {
             dbUtil.close(pstmt, con);
             return null;
         }
     }
-    //寰楀埌鎵�鏈夌殑鍥句功
+    //得到所有的图书
     public List<Book> queryAllBook() throws Exception{
         Connection con = dbUtil.getCon();
         String sql = "select * from book";
@@ -48,12 +48,27 @@ public class BookDao {
             book.setAuthor(rs.getString(3));
             book.setPublish(rs.getString(4));
             book.setPrice(rs.getFloat(5));
-            book.setSunm(rs.getInt(6));
-            book.setSummary(rs.getString(7));
-            book.setPhoto(rs.getString(8));
+            book.setSummary(rs.getString(6));
+            book.setPhoto(rs.getString(7));
             listBook.add(book);
         }
         dbUtil.close(pstmt, con);
         return listBook;
+    }
+
+    //添加图书
+    public void insertBook(Book book)throws Exception{
+        Connection con = dbUtil.getCon();
+        String sql = "insert into book values(?,?,?,?,?,?,?)";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setString(1,book.getIsbn());
+        pstmt.setString(2,book.getBookName());
+        pstmt.setString(3,book.getAuthor());
+        pstmt.setString(4,book.getPublish());
+        pstmt.setFloat(5,book.getPrice());
+        pstmt.setString(6,book.getSummary());
+        pstmt.setString(7,book.getPhoto());
+        pstmt.executeUpdate();
+        dbUtil.close(pstmt,con);
     }
 }

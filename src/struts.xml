@@ -6,19 +6,27 @@
 
 <struts>
     <package name="default" extends="struts-default">
+        <!--登陆-->
         <action name="login" class="org.bookmanage.action.LoginAction" method="login">
             <result name="student">/S_index.jsp</result>
             <result name="admin">/M_index.jsp</result>
             <result name="error">/index.jsp</result>
         </action>
 
+        <!--根据isbn查询图书-->
         <action name="book" class="org.bookmanage.action.BookAction" method="queryByBookIsbn">
             <result name="book">/M_find_page.jsp</result>
             <result name="info">/S_index.jsp</result>
         </action>
+        <!--查询所有图书-->
         <action name="bookList" class="org.bookmanage.action.BookAction" method="queryAll">
             <result name="bookList">/M_find.jsp</result>
             <result name="info">/S_index.jsp</result>
+        </action>
+        <!--添加图书-->
+        <action name="insertBook" class="org.bookmanage.action.BookAction" method="insertBook">
+            <result name="insertBook">/M_add.jsp</result>
+            <result name="info">/M_add.jsp</result>
         </action>
 
 
@@ -32,5 +40,14 @@
             <result name="returnBook" type="chain">lendList</result>
         </action>
 
+
+        <action name="listUser" class="org.bookmanage.action.LoginAction" method="queryAllUser">
+            <result name="listUser">/M_stu.jsp</result>
+            <result name="info">/M_stu.jsp</result>
+        </action>
+        <action name="delUser" class="org.bookmanage.action.LoginAction" method="delUser">
+            <result name="delUser" type="chain">listUser</result>
+            <result name="info" type="chain">listUser</result>
+        </action>
     </package>
 </struts>

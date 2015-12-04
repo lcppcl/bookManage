@@ -20,9 +20,9 @@
 			<form action="" method="post">
 				<div class="tables">
 					<div class="row">
-						<div class="batch-btn">
-							<span>批 量 操 作 ：</span>
-							<button class="btn btn-danger" name="actiontype" value="delete" type="submit">删 除</button>
+						<div class="batch-btn"><%--<span>批 量 操 作 ：</span>
+							<button class="btn btn-danger" name="actiontype" value="delete" type="submit">删 除</button>--%>
+
 						</div>
 						<div class="col-xs-12">
 							<div class="table-header">
@@ -30,6 +30,9 @@
 							</div>
 							<div class="table-responsive">
 								<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+									<caption>
+										<label style="color: #ac2925">${msg}</label>
+									</caption>
 									<thead>
 										<tr>
 											<th class="center">
@@ -39,14 +42,16 @@
 												</label>
 											</th>
 											<th>序 号&nbsp;</th>
-											<th>读者名称 </th>
+											<th>读者编号 </th>
 											<th>读者用户名 </th>
-											<th>联系方式</th>
-											<th>学号 </th>
+											<th>性别</th>
+											<th>专业 </th>
 											<th>列表操作 </th>
 										</tr>
 									</thead>
 									<tbody>
+
+									<s:iterator id="lu" value="#request.listUser" status="su">
 										<tr>
 											<td class="center">
 												<label>
@@ -54,220 +59,18 @@
 													<span class="lbl"></span>
 												</label>
 											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
+											<td><s:property value="#su"></s:property></td>
+											<td><s:property value="#lu.readerId"></s:property></td>
+											<td><s:property value="#lu.name"></s:property></td>
+											<td><s:property value="#lu.sex==0?'女':'男'"></s:property></td>
+											<td><s:property value="#lu.spec"></s:property></td>
 											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr><tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-success" value="查看详情">
+												<a href="delUser.action?readerId=<s:property value="#lu.readerId"/>"/>
+												<input type="button" class="btn btn-danger" value="删除">
 												</a>
 											</td>
 										</tr>
+									</s:iterator>
 									</tbody>
 								</table>
 							</div>

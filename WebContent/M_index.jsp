@@ -53,11 +53,11 @@
 						<li>书 籍 添 加</li>
 					</a>
 					<div class="hidden"></div>
-					<a target="right" href="M_find.jsp">
+					<a target="right" href="bookList">
 						<li>书 籍 查 询</li>
 					</a>
 					<div class="hidden"></div>
-					<a target="right" href="M_stu.jsp">
+					<a target="right" href="listUser.action">
 						<li>读 者 管 理</li>
 					</a>
 				</ul>

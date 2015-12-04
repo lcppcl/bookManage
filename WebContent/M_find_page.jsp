@@ -33,8 +33,6 @@
 						<td width="220"><s:property value="#request.book.price"></s:property></td>
 					</tr>
 					<tr>
-						<th width="80" height="55">库存：</th>
-						<td width="220"><s:property value="#request.book.sunm"></s:property></td>
 						<th width="80">出版社：</th>
 						<td width="220"><s:property value="#request.book.publish"></s:property></td>
 					</tr>

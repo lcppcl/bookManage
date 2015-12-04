@@ -12,7 +12,7 @@ import java.util.List;
 
 public class LendDao {
     private static DbUtil dbUtil = new DbUtil();
-    //鏍规嵁鍊熼槄杩欑殑id锛屽拰鍥句功id鏌ユ壘
+    //根据借阅这的id，和图书id查找
     public List<Lend> lendBook(String lenderid)throws Exception{
         Connection con = dbUtil.getCon();
         String sql = "select ltime,rtime,author,bookName,bookid from lend,book where lenderid=? and lend.bookid=book.isbn";
@@ -34,7 +34,7 @@ public class LendDao {
     }
 
 
-    //杩樹功
+    //还书
     public void returnBook(String isbn ) throws Exception {
         Connection con = dbUtil.getCon();
         String sql = "delete from lend where bookid=?";

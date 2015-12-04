@@ -5,7 +5,6 @@ public class Book {
     private String author;//作者
     private String publish;//出版社
     private Float price;//价格
-    private int sunm;//库存
     private String summary;//摘要
     private String photo;//图片
 
@@ -47,14 +46,6 @@ public class Book {
 
     public void setPrice(Float price) {
         this.price = price;
-    }
-
-    public int getSunm() {
-        return sunm;
-    }
-
-    public void setSunm(int sunm) {
-        this.sunm = sunm;
     }
 
     public String getSummary() {
