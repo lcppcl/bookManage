@@ -71,4 +71,44 @@ public class BookDao {
         pstmt.executeUpdate();
         dbUtil.close(pstmt,con);
     }
+
+
+    //删除图书
+    public boolean deleBook(String isbn ) throws Exception {
+        Connection con = dbUtil.getCon();
+        String sql2 = "select * from lend where bookid=?";
+        PreparedStatement pstmt = con.prepareStatement(sql2);
+        pstmt.setString(1, isbn);
+        ResultSet resultSet = pstmt.executeQuery();
+        if (resultSet.next()){
+            pstmt.close();
+            return false;
+        }else {
+            String sql = "delete from book where isbn=?";
+            PreparedStatement pstmt2 = con.prepareStatement(sql);
+            pstmt2.setString(1, isbn);
+            int rs = pstmt2.executeUpdate();
+            dbUtil.close(pstmt2, con);
+            return true;
+        }
+    }
+
+    //更新图书
+    public void updateBook(Book book)throws Exception{
+        Connection con = dbUtil.getCon();
+        String sql = "update book set isbn=?,bookName=?,author=?,publish=?,price=?,summary=?,photo=? where isbn=?";
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        pstmt.setString(1,book.getIsbn());
+        pstmt.setString(2,book.getBookName());
+        pstmt.setString(3,book.getAuthor());
+        pstmt.setString(4,book.getPublish());
+        pstmt.setFloat(5,book.getPrice());
+        pstmt.setString(6,book.getSummary());
+        pstmt.setString(7,book.getPhoto());
+        pstmt.setString(8,book.getIsbn());
+        int i = pstmt.executeUpdate();
+        System.out.println("--------------");
+        System.out.println(i);
+        dbUtil.close(pstmt,con);
+    }
 }

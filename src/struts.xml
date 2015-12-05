@@ -18,6 +18,13 @@
             <result name="book">/M_find_page.jsp</result>
             <result name="info">/S_index.jsp</result>
         </action>
+
+        <!--根据isbn查询图书-->
+        <action name="book2" class="org.bookmanage.action.BookAction" method="queryByBookIsbn2">
+            <result name="book">/M_modify.jsp</result>
+            <result name="info">/M_modify.jsp</result>
+        </action>
+
         <!--查询所有图书-->
         <action name="bookList" class="org.bookmanage.action.BookAction" method="queryAll">
             <result name="bookList">/M_find.jsp</result>
@@ -28,6 +35,23 @@
             <result name="insertBook">/M_add.jsp</result>
             <result name="info">/M_add.jsp</result>
         </action>
+        <!--查询所有图书-->
+        <action name="bookList2" class="org.bookmanage.action.BookAction" method="queryAll2">
+            <result name="bookList2">/M_book.jsp</result>
+            <result name="info2">/M_book.jsp</result>
+        </action>
+        <!--删除图书-->
+        <action name="deleBook" class="org.bookmanage.action.BookAction" method="deleBook">
+            <result name="deleBook" type="chain">bookList2</result>
+            <result name="info" type="chain">bookList2</result>
+        </action>
+        <!--更新图书-->
+        <action name="updateBook" class="org.bookmanage.action.BookAction" method="updateBook">
+            <result name="updateBook" type="chain">book2</result>
+            <result name="info2">/M_modify.jsp</result>
+        </action>
+
+
 
 
 
@@ -39,6 +63,8 @@
         <action name="returnBook" class="org.bookmanage.action.LendAction" method="returnBook">
             <result name="returnBook" type="chain">lendList</result>
         </action>
+
+
 
 
         <action name="listUser" class="org.bookmanage.action.LoginAction" method="queryAllUser">

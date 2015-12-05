@@ -45,7 +45,7 @@
 			<div class="menu">
 				<ul class="menu-list">
 					<div class="hidden"></div>
-					<a target="right" href="M_book.jsp">
+					<a target="right" href="bookList2">
 						<li>书 籍 管 理</li>
 					</a>
 					<div class="hidden"></div>

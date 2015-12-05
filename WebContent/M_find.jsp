@@ -90,7 +90,7 @@
 					<td><s:property value="#lb.bookName"></s:property></td>
 					<td><s:property value="#lb.author"></s:property></td>
 					<td><s:property value="#lb.publish"></s:property></td>
-					<td><s:property value="#lb.price"></s:property>元</td>
+					<td><s:property value="#lb.isbn"></s:property></td>
 					<td>
 						<a href="book.action?isbn=<s:property value="#lb.isbn"/>">
 							<button class="btn btn-warning">查看详情</button>

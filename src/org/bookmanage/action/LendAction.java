@@ -27,9 +27,11 @@ public class LendAction extends ActionSupport {
 
     //还书
     public String returnBook() throws Exception {
+    	HttpServletRequest request = ServletActionContext.getRequest();
         LendDao lendDao  = new LendDao();
         String isbn = request.getParameter("isbn");
         lendDao.returnBook(isbn);
+        request.setAttribute("msg","还书成功");
         return "returnBook";
     }
 }

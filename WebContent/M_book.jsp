@@ -22,8 +22,6 @@
 				<div class="tables">
 					<div class="row">
 						<div class="batch-btn">
-							<span>批 量 操 作 ：</span>
-							<button class="btn btn-danger" name="actiontype" value="delete" type="submit">删 除</button>
 						</div>
 						<div class="col-xs-12">
 							<div class="table-header">
@@ -31,6 +29,9 @@
 							</div>
 							<div class="table-responsive">
 								<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+									<caption>
+										<label style="color: #ac2925">${msg}</label>
+									</caption>
 									<thead>
 										<tr>
 											<th class="center">
@@ -48,6 +49,7 @@
 										</tr>
 									</thead>
 									<tbody>
+									<s:iterator id="lb" value="#request.listBook2" status="st">
 										<tr>
 											<td class="center">
 												<label>
@@ -55,263 +57,21 @@
 													<span class="lbl"></span>
 												</label>
 											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
+											<td><s:property value="#st"></s:property></td>
+											<td><s:property value="#lb.bookName"></s:property></td>
+											<td><s:property value="#lb.author"></s:property></td>
+											<td><s:property value="#lb.publish"></s:property></td>
+											<td><s:property value="#lb.isbn"></s:property></td>
 											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
+												<a href="book2?isbn=<s:property value="#lb.isbn"/>"/>
+												<input type="button" class="btn btn-info" value="修改">
 												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
+												<a href="deleBook.action?isbn=<s:property value="#lb.isbn"/>"/>
+												<input type="button" class="btn btn-danger" value="删除">
 												</a>
 											</td>
 										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
-										<tr>
-											<td class="center">
-												<label>
-													<input type="checkbox" class="ace" name="ids" value="" />
-													<span class="lbl"></span>
-												</label>
-											</td>
-											<td>123</td>
-											<td>123</td>
-											<td>213</td>
-											<td>231</td>
-											<td>132</td>
-											<td>
-												<a href="M_modify.jsp"/>
-													<input type="button" class="btn btn-info" value="修改">
-												</a>
-												<a href="###"/>
-													<input type="button" class="btn btn-danger" value="删除">
-												</a>
-												<a href="M_find_page.jsp"/>
-													<input type="button" class="btn btn-success" value="查看详情">
-												</a>
-											</td>
-										</tr>
+									</s:iterator>
 									</tbody>
 								</table>
 							</div>

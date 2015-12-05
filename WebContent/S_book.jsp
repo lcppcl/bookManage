@@ -27,6 +27,9 @@
 							</div>
 							<div class="table-responsive">
 								<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+									<caption>
+										<label style="color: #ac2925">${msg}</label>
+									</caption>
 									<thead>
 										<tr>
 											<th class="center">
