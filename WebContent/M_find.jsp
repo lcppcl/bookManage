@@ -87,6 +87,23 @@
 						</tr>
 					</thead>
 					<tbody>
+					<s:if test="#session.user.type==1">
+						<s:iterator id="lb" value="#session.listBook">
+							<tr>
+								<td><s:property value="#lb.bookName"></s:property></td>
+								<td><s:property value="#lb.author"></s:property></td>
+								<td><s:property value="#lb.publish"></s:property></td>
+								<td><s:property value="#lb.isbn"></s:property></td>
+								<td><%-- <a
+									href="lend.action?isbn=<s:property value="#lb.isbn"/>">
+										<button class="btn btn-info">借 阅</button> --%>
+								</a> <a href="book.action?isbn=<s:property value="#lb.isbn"/>">
+										<button class="btn btn-warning">查看详情</button>
+								</a></td>
+							</tr>
+						</s:iterator>
+					</s:if>
+					<s:else>
 						<s:iterator id="lb" value="#session.listBook">
 							<tr>
 								<td><s:property value="#lb.bookName"></s:property></td>
@@ -101,6 +118,8 @@
 								</a></td>
 							</tr>
 						</s:iterator>
+					</s:else>
+						
 					</tbody>
 				</table>
 		</div>

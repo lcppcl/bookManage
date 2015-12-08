@@ -3,7 +3,7 @@
 }
 .breadcrumb {
 	position: absolute;
-	width: 800px;
+	width: 1200px;
 }
 .table-header {
 	background-color: #307ecc;
@@ -181,6 +181,6 @@ td .lbl:only-child {
 }
 td { 
     width: 1px; 
-	white-space: nowrap; /* ����Ӧ���*/ 
-	word-break:  keep-all; /* ���ⳤ���ʽضϣ�����ȫ�� */ 
+	white-space: nowrap; 
+	word-break:  keep-all; 
 } 

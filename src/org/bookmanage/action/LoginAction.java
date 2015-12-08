@@ -31,10 +31,10 @@ public class LoginAction extends ActionSupport {
 			if (listBook.size() != 0){
 				session.setAttribute("listBook",listBook);
 	        }
-			session.setAttribute("student", user);
+			session.setAttribute("user", user);
 			return "student";
 		}else if(user!=null && user.getType() == 1 && readerid.equals(user.getReaderId())){
-			session.setAttribute("admin", user);
+			session.setAttribute("user", user);
 			if (listBook.size() != 0){
 				session.setAttribute("listBook",listBook);
 	        }

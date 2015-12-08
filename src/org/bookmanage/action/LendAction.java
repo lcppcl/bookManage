@@ -16,7 +16,7 @@ public class LendAction extends ActionSupport {
     HttpSession session = request.getSession();
     public String queryLend()throws Exception{
         LendDao lendDao  = new LendDao();
-        User student = (User) session.getAttribute("student");
+        User student = (User) session.getAttribute("user");
         List<Lend> lendList = lendDao.lendBook(student.getReaderId());
         if (lendList.size() !=0 ){
             request.setAttribute("lendList",lendList);
@@ -40,7 +40,7 @@ public class LendAction extends ActionSupport {
     public String lend() throws Exception{
     	HttpServletRequest request = ServletActionContext.getRequest();
     	String isbn = request.getParameter("isbn");
-    	User student = (User) session.getAttribute("student");
+    	User student = (User) session.getAttribute("user");
     	LendDao lendDao  = new LendDao();
     	boolean flag = lendDao.lend(isbn, student.getReaderId());
     	if(flag){

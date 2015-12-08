@@ -9,11 +9,11 @@
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<title></title>
 		<script>
-			window.onload = function height() {
-				var h = window.screen.height + 250 + "px";
-				var w = window.screen.width - 300 + "px";
-				var rh = window.screen.height + 100 + "px";
-				var rw = window.screen.width - 300 + "px";
+			 window.onload = function height() {
+				var h = window.screen.height + 300 + "px";
+				var w = window.screen.width - 150 + "px";
+				var rh = window.screen.height + 200 + "px";
+				var rw = window.screen.width - 150 + "px";
 				document.getElementById('left').style.height = h;
 				document.getElementById('top').style.width = w;
 				document.getElementById('right').style.height = rh;

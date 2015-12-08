@@ -20,6 +20,7 @@ ul {
 	position: absolute;
 	left: 300px;
 	height: 150px;
+	width:600px;
 	background: linear-gradient(90deg, #4ACAA8, #66CCCC);
 }
 
@@ -55,7 +56,7 @@ ul {
 	font-size: bold;
 	top: 30px;
 	height: 60px;
-	widows: 300px;
+	widows: 500px;
 	text-align: center;
 }
 

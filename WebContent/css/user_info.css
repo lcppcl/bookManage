@@ -6,12 +6,12 @@
 
 .info {
 	position: absolute;
-	width: 900px;
-	min-height: 530px;
+	width:1050px;
+	min-height: 700px;
 	height: auto;
 	border: 5px solid #CCCC99;
-	left: 80px;
-	top: 40px;
+	left: 20px;
+	top: 20px;
 	background-color: #F1F1F1;
 }
 

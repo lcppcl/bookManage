@@ -78,7 +78,7 @@
 								图 书 馆 书 籍 管 理
 							</div>
 							<div class="table-responsive">
-								<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+								<table id="sample-table-4" class="table table-striped table-bordered table-hover">
 									<caption>
 										<label style="color: #ac2925">${msg}</label>
 									</caption>

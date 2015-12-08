@@ -139,7 +139,7 @@ public class BookAction extends ActionSupport{
         return "insertBook";
     }
 
-    //É¾³ýÑ§Éú
+    //É¾³ýÍ¼Êé
     public String  deleBook() throws Exception{
         HttpServletRequest request = ServletActionContext.getRequest();
         BookDao bookDao = new BookDao();
