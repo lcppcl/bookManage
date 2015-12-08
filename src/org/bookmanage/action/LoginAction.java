@@ -1,6 +1,7 @@
 package org.bookmanage.action;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
@@ -15,6 +16,7 @@ import java.util.List;
 
 public class LoginAction extends ActionSupport {
 	HttpServletRequest request = ServletActionContext.getRequest();
+	HttpServletResponse response = ServletActionContext.getResponse();
 	HttpSession session = request.getSession();
 	//µÇÂ½
 	public String login() throws Exception {
@@ -22,11 +24,20 @@ public class LoginAction extends ActionSupport {
 		String password = request.getParameter("password");
 		LoginDao loginDao = new LoginDao();
 		User user = loginDao.login(readerid, password);
-		if(user!=null && user.getType() == 0){
+		BookDao bookDao = new BookDao();
+		List<Book> listBook= bookDao.queryAllBook();
+		String result = null;
+		if(user!=null && user.getType() == 0 && readerid.equals(user.getReaderId())){
+			if (listBook.size() != 0){
+				session.setAttribute("listBook",listBook);
+	        }
 			session.setAttribute("student", user);
 			return "student";
-		}else if(user!=null && user.getType() == 1){
+		}else if(user!=null && user.getType() == 1 && readerid.equals(user.getReaderId())){
 			session.setAttribute("admin", user);
+			if (listBook.size() != 0){
+				session.setAttribute("listBook",listBook);
+	        }
 			return "admin";
 		}else{
 			return "error";

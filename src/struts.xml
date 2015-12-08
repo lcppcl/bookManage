@@ -54,12 +54,16 @@
 
 
 
-
-
-        <action name="lendList" class="org.bookmanage.action.LendAction" method="queryLend">
+		<!-- 显示所有的书 -->
+		<action name="lendList" class="org.bookmanage.action.LendAction" method="queryLend">
             <result name="lendList">/S_book.jsp</result>
             <result name="info">/S_book.jsp</result>
         </action>
+        <!-- 借书 -->
+        <action name="lend" class="org.bookmanage.action.LendAction" method="lend">
+            <result name="lend" type="chain">lendList</result>
+        </action>
+        <!-- 还书 -->
         <action name="returnBook" class="org.bookmanage.action.LendAction" method="returnBook">
             <result name="returnBook" type="chain">lendList</result>
         </action>
@@ -67,10 +71,12 @@
 
 
 
+		<!-- 显示所有的学生 -->
         <action name="listUser" class="org.bookmanage.action.LoginAction" method="queryAllUser">
             <result name="listUser">/M_stu.jsp</result>
             <result name="info">/M_stu.jsp</result>
         </action>
+        <!-- 删除学生 -->
         <action name="delUser" class="org.bookmanage.action.LoginAction" method="delUser">
             <result name="delUser" type="chain">listUser</result>
             <result name="info" type="chain">listUser</result>

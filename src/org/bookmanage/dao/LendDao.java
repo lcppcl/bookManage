@@ -7,7 +7,10 @@ import org.bookmanage.dbconnect.DbUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class LendDao {
@@ -42,5 +45,36 @@ public class LendDao {
         pstmt.setString(1, isbn);
         int rs = pstmt.executeUpdate();
         dbUtil.close(pstmt, con);
+    }
+    
+    //借书
+    public boolean lend(String bookid,String lenderid) throws Exception{
+    	
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		Calendar c = Calendar.getInstance();
+		String ltime = f.format(c.getTime());
+		c.add(Calendar.MONTH, 1);//获取当前日期的后一个月
+		String rtime = f.format(c.getTime());
+    	
+    	
+    	Connection con = dbUtil.getCon();
+    	String sql = "select * from lend where bookid=?";
+    	PreparedStatement pstmt = con.prepareStatement(sql);
+    	pstmt.setString(1,bookid);
+    	ResultSet i = pstmt.executeQuery();
+    	if(!i.next()){
+    		String sql1 = "insert into lend values(?,?,?,?)";
+        	PreparedStatement pstmt1 = con.prepareStatement(sql1);
+        	pstmt1.setString(1,bookid);
+        	pstmt1.setString(2,lenderid);
+        	pstmt1.setString(3, ltime);
+        	pstmt1.setString(4, rtime);
+        	pstmt1.executeUpdate();
+        	pstmt1.close();
+        	return true;
+    	}else{
+    		dbUtil.close(pstmt, con);
+    		return false;
+    	}
     }
 }

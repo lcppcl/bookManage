@@ -12,6 +12,7 @@ import java.util.List;
 
 public class LendAction extends ActionSupport {
     HttpServletRequest request = ServletActionContext.getRequest();
+    //查询所有的书
     HttpSession session = request.getSession();
     public String queryLend()throws Exception{
         LendDao lendDao  = new LendDao();
@@ -33,5 +34,21 @@ public class LendAction extends ActionSupport {
         lendDao.returnBook(isbn);
         request.setAttribute("msg","还书成功");
         return "returnBook";
+    }
+    
+    //借书
+    public String lend() throws Exception{
+    	HttpServletRequest request = ServletActionContext.getRequest();
+    	String isbn = request.getParameter("isbn");
+    	User student = (User) session.getAttribute("student");
+    	LendDao lendDao  = new LendDao();
+    	boolean flag = lendDao.lend(isbn, student.getReaderId());
+    	if(flag){
+    		request.setAttribute("msg","借书成功");
+ 
+    	}else{
+    		request.setAttribute("msg","您已经借了");
+    	}
+    	return "lend";
     }
 }
