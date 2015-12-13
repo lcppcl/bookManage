@@ -112,7 +112,7 @@
 											<td><s:property value="#ll.bookName"></s:property></td>
 											<td>
 												<a href="returnBook.action?isbn=<s:property value="#ll.bookid"/>"/>
-												<input type="button" class="btn btn-warning" value="归还">
+												<input type="button" class="btn btn-success" value="归还">
 												</a>
 												<a href="book.action?isbn=<s:property value="#ll.bookid"/>">
 													<input type="button" class="btn btn-warning" value="查看详情">

@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-			<link href="css/user_info.css" rel="stylesheet">
+		<link href="css/user_info.css" rel="stylesheet">
 		<script src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/checkUploadePicture.js"></script>
 		<!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
@@ -47,7 +47,7 @@
 						<td colspan="3"><input type="file" name="uploadFile" onchange="fileChange(this)"/></td>
 					</tr>
 				</table>
-				<input class="btn btn-info add-btn" type="submit">提 交</input>
+				<input class="btn btn-info add-btn" type="submit" value="提 交" />
 			</form>
 		</div>
 	</body>

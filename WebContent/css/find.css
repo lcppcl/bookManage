@@ -10,7 +10,7 @@
 
 .form-group {
 	position: relative;
-	left: 260px;
+	left: 380px;
 	top: 50px;
 }
 
@@ -71,7 +71,7 @@
 .shows-head {
 	position: relative;
 	font-size: 16px;
-	left: 400px;
+	left: 500px;
 	top: 90px;
 	color: chocolate;
 }
